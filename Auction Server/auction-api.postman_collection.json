@@ -1,0 +1,91 @@
+{
+  "info": {
+    "name": "NestJS Real-Time Auction API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Auction Item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"MacBook Pro M3\",\n  \"description\": \"Latest Apple MacBook Pro\",\n  \"startingPrice\": 1500,\n  \"duration\": 300\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/auction",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "auction"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Auction Items",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/auction",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "auction"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Auction Item by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/auction/1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "auction",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Place a Bid",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": 5,\n  \"amount\": 1600\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/auction/1/bid",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "auction",
+            "1",
+            "bid"
+          ]
+        }
+      }
+    }
+  ]
+}
